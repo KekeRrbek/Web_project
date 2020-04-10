@@ -1,0 +1,24 @@
+<div *ngIf="user">
+
+  <h2>{{user.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{user.id}}</div>
+  <div><span>Name: </span>{{user.name}}</div>
+  <div><span>Surname: </span>{{user.surname}}</div>
+  <div><span>Login: </span>{{user.login}}</div>
+  <div><span>Password: </span>{{user.password}}</div>
+  <div><span>Last Twit: </span>{{user.last_twit_date === null ? "No TWITS" : user.last_twit_date | date : 'shortDate'}}</div>
+
+  <div>
+    <label>name:
+      <input [(ngModel)]="user.name" placeholder="name"/>
+    </label>
+    <label>name:
+      <input [(ngModel)]="user.surname" placeholder="surname"/>
+    </label>
+    <label>name:
+      <input [(ngModel)]="user.login" placeholder="login"/>
+    </label>
+  </div>
+  <br><a routerLink="twits">twits</a> <br> <br>
+  <button (click)="goBack()">go back</button>
+</div>

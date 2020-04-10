@@ -1,0 +1,22 @@
+<div *ngIf="twit">
+
+  <h2>{{twit.title | uppercase}} Details</h2>
+  <div><span>id: </span>{{twit.id}}</div>
+  <div><span>Title: </span>{{twit.title}}</div>
+  <div><span>Text: </span>{{twit.text}}</div>
+  <div><span>Like count: </span>{{twit.like_count}}</div>
+<!--  <div><span>Author: </span>{{twit.password}}</div>-->
+
+  <div>
+    <label>title:
+      <input size="40px" [(ngModel)]="twit.title" placeholder="title"/>
+    </label><br>
+    <label>text:
+      <input size="100px" [(ngModel)]="twit.text" placeholder="text"/>
+    </label><br>
+    <button (click)="like()" > Like </button>
+    <button (click)="delete()" > Delete </button>
+  </div>
+<!--  <br><a routerLink="twits">twits</a> <br> <br>-->
+  <button (click)="goBack()">go back</button>
+</div>

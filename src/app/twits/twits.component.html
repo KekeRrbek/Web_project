@@ -1,0 +1,27 @@
+<div>
+  <h2>My Twits</h2>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let twit of twits">
+      <a routerLink="/twits/{{twit.id}}">
+        <span>{{twit.id}}</span> {{twit.title}}
+      </a>
+    </li>
+  </ul>
+</div>
+<form [formGroup]="createTwitForm" *ngIf="user !== null"
+      (ngSubmit)="onAdd(createTwitForm.value)">
+  <h2>Add new Twit:</h2>
+  <div>
+    <label for="title"> Title: </label>
+    <input type="text" id="title" formControlName="title">
+    <label for="text"> Text: </label>
+    <input type="text" id="text" formControlName="text">
+  </div>
+  <button class="button" type="submit">Twit!</button>
+</form>
+<div>
+  <button (click)="goBack()">go back</button>
+</div>
+
